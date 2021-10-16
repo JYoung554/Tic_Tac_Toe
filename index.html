@@ -5,18 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello Front-End</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello Front-End</h1>
+  
   <!-- Build your game board, instructions, and score displays here! -->
+<div>
+<h1 class='title'>Tic Tac Toe!</h1>
+</div>
+
+<div class='whole js-score'>
+  
+  <p class='x-player p'><span>Player X</span><span class='score x-score'>0</span></p>
+  <p class='tie-player p'><span>Tie</span><span class='score tie-score'>0</span></p>
+  <p class='o-player p'><span>Player O</span><span class='score o-score'>0</span></p>
+</div>
+<div><h2 class='displayPlayer'>X</h2></div>
+  <div>
+  <div class='game-board'>
+    <div class="space remove-l remove-t" id='0'></div>
+    <div class="space remove-t 2" id='1'></div>
+    <div class="space remove-r remove-t" id='2'></div>
+    <div class="space remove-l 4" id='3'></div>
+    <div class="space 5 mid" id='4'></div>
+    <div class="space remove-r 6" id='5'></div>
+    <div class="space remove-l remove-b" id='6'></div>
+    <div class="space remove-b 8" id='7'></div>
+    <div class="space remove-r remove-b" id='8'></div>
+  </div>
+</div>
+
+<div class='win' style="opacity: 1;"><h1 class='winner'></h1></div>
 
 
-
-
-
-
-
-
+  <div>
+    <nav>
+      <h2 class="js-score"><button class='btn'>Play Again</button></h2>
+    </nav>
+  </div>
 
   
 
