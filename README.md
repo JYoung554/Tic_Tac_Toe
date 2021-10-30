@@ -20,7 +20,7 @@
 
 
 # Description
-This will be a web-based version of Tic Tac Toe. In Tic Tac Toe, players are determined as either player X or O and fill a 3x3 grid with their symbol. The first player to fill 3 spaces in a row either horizontally , vertically, or diagonally wins.
+This is a web-based version of Tic Tac Toe. In Tic Tac Toe, players are determined as either player X or O and fill a 3x3 grid with their symbol. The first player to fill 3 spaces in a row either horizontally , vertically, or diagonally wins.
 
 
 # Game Flow
