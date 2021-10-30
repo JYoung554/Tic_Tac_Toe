@@ -1,7 +1,7 @@
 # Tic_Tac_Toe
 
 
-![Tic Tac Toe](<img width="2048" alt="Screen Shot 2021-10-25 at 8 39 08 AM" src="https://user-images.githubusercontent.com/50657237/139540585-fd077482-16f6-4da5-a9bd-34f02c1936f6.png">)
+![Tic Tac Toe](https://github.com/JYoung554/Tic_Tac_Toe/blob/main/Screen%20Shot%202021-10-25%20at%208.39.08%20AM.png)
 
 
 ### By: Jonte' Fears
