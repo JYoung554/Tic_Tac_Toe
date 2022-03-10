@@ -8,14 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
   
 <div>
-<h1 class='title'>Tic Tac Toe!</h1>
+<h1 class='title'><span>Tic Tac Toe!</span></h1>
+<h4 class='author'><span>By: Jonte' Fears</span></h4>
 </div>
 
-<div class='whole js-score'>
+<div class='whole js-score layer'>
   
   <p class='x-player p'><span>Player X</span><span class='score x-score'>0</span></p>
   <p class='tie-player p'><span>Tie</span><span class='score tie-score'>0</span></p>
@@ -24,7 +26,7 @@
 <div><h2 class='displayPlayer'>X</h2></div>
   <div>
   <div class='game-board'>
-    <div class="space remove-l remove-t" id='0'></div>
+    <div class="space remove-l remove-t" id='0' onClick="audio.play();"></div>
     <div class="space remove-t 2" id='1'></div>
     <div class="space remove-r remove-t" id='2'></div>
     <div class="space remove-l 4" id='3'></div>
@@ -36,18 +38,23 @@
   </div>
 </div>
 
-<div class='win' style="opacity: 1;"><h1 class='winner'></h1></div>
+<div class='win' style="opacity: 0;">Win<h1 class='winner'></h1></div>
 
 
   <div>
     <nav>
-      <h2 class="js-score"><button class='btn'>Play Again</button></h2>
+      <h2 class="js-score"><button class='btn btn1'><span class="layer" class="layer2" class="layer3">Play Again</span></button></h2>
+      <h2 class="js-score"><button class='aiBtn'><span class="layer" class="layer2" class="layer3">Computer</span></button></h2>
+      <h2 class="js-score"><button class='swtcBtn btn3'><span class="layer" class="layer2" class="layer3">Switch Player</span></button></h2>
     </nav>
   </div>
 
-  
 
 
-  <script type="text/javascript" src="js/app.js"></script>
+
+  <script type="text/javascript" src="js/app.js">
+    const audio = new Audio();
+    audio.src ="./415083__harrietniamh__video-game-coin.wav";
+  </script>
 </body>
 </html>

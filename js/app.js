@@ -10,6 +10,16 @@ let turns = 9
 
 const btn = document.querySelector('.btn')
 
+const aiBtn = document.querySelector('.aiBtn')
+
+const swtcBtn = document.querySelector('.swtcBtn')
+
+const win = document.querySelector('.win')
+
+let computer = false
+
+let switchPlayers = false
+
 const restart = false
 
 const xDisplay = document.querySelector('.x-score')
@@ -51,11 +61,19 @@ const winningCombos = [
   [2, 4, 6]
 ]
 
-////////////////////////////////
-// Functions For Game Logic Here
-
-////////////////////////////////
-// Event Listeners Here
+const switchPlayer = () => {
+  if (currentPlayer === `${playerX}`) {
+    currentPlayer = `${playerO}`
+    displayPlayer.innerText = `${currentPlayer.charAt(0).toUpperCase()}'s turn`
+  } else if (currentPlayer === `${playerX}` && computer === true) {
+    currentPlayer = `${playerO}`
+    displayPlayer.innerText = `${currentPlayer.charAt(0).toUpperCase()}'s turn`
+    currentPlayer = `${playerX}`
+  } else {
+    currentPlayer = `${playerX}`
+    displayPlayer.innerText = `${currentPlayer.charAt(0).toUpperCase()}'s turn`
+  }
+}
 
 const logic = function () {
   gameActive = true
@@ -65,10 +83,11 @@ const logic = function () {
   for (let i = 0; i < space.length; i++) {
     space[i].addEventListener('click', addLogic)
   }
-  //space.forEach((cell) => cell.classList.add(currentPlayer))
 }
 
 const addLogic = (c) => {
+  const audio = new Audio('415083__harrietniamh__video-game-coin.wav')
+  audio.play()
   if (
     c.target.classList[4] === 'x' ||
     c.target.classList[4] === 'o' ||
@@ -80,21 +99,39 @@ const addLogic = (c) => {
   let i = parseInt(c.target.id)
   console.log(i)
 
-  //if ((xIsCurrent = true)) {
-  //   c.target.classList.add(playerX)
-  //   console.log(currentPlayer)
-  //  } else if ((xIsCurrent = false)) {
-  //   c.target.classList.add(playerO)
-  //   console.log(currentPlayer)
-  //   xIsCurrent = true
-  //  currentPlayer = playerX
-  //}
+  if (
+    !c.target.classList.add('full') &&
+    computer === true &&
+    !c.target.classList.add('o')
+  ) {
+    const ai = () => {
+      aiTurn = false
+      gameState[0 + i]
+      const random = Math.floor(Math.random() * space.length)
+      const randomO = space[random]
+
+      aiSelect(randomO)
+    }
+    const aiSelect = (randomO) => {
+      randomO.classList.add(`${currentPlayer}`)
+      gameState[0 + i] = randomO.classList[4]
+      c.target.classList.add('full')
+      turns - 2
+    }
+    ai()
+    aiTurn = true
+    console.log(turns)
+    checkWin()
+    return
+  }
 
   if (!c.target.classList.add('full')) {
+    aiTurn = false
     c.target.classList.add(`${currentPlayer}`)
     gameState[0 + i] = `${currentPlayer}`
     c.target.classList.add('full')
     turns--
+    aiTurn = true
     console.log(turns)
     checkWin()
     return
@@ -130,6 +167,14 @@ const checkWin = () => {
       displayPlayer.innerText = `${currentPlayer
         .charAt(0)
         .toUpperCase()}'s turn`
+    } else if (currentPlayer === `${playerX}` && computer === true) {
+      currentPlayer = `${playerO}`
+      displayPlayer.innerText = `${currentPlayer
+        .charAt(0)
+        .toUpperCase()}'s turn`
+      currentPlayer = `${playerX}`
+    } else if (switchPlayers === true && gameActive === false) {
+      switchPlayer()
     } else {
       currentPlayer = `${playerX}`
       displayPlayer.innerText = `${currentPlayer
@@ -139,12 +184,55 @@ const checkWin = () => {
   }
 
   btn.addEventListener('click', function () {
+    computer = false
     gameState = new Array(9).fill('')
     space.forEach((spaces) => {
       if (spaces.classList.value.includes('full')) {
         spaces.classList.remove('full')
         spaces.classList.remove('x')
         spaces.classList.remove('o')
+        win.style.opacity = '0'
+        gameBoard.style.opacity = '1'
+        displayPlayer.style.opacity = '1'
+        const audio = new Audio('528862__eponn__beep-4.wav')
+        audio.play()
+        audio.volume = 0.2
+      }
+    })
+    logic()
+  })
+
+  console.log(computer)
+
+  /*aiBtn.addEventListener('click', function () {
+    gameState = new Array(9).fill('')
+    computer = true
+    space.forEach((spaces) => {
+      if (spaces.classList.value.includes('full')) {
+        spaces.classList.remove('full')
+        spaces.classList.remove('x')
+        spaces.classList.remove('o')
+      }
+    })
+    logic()
+})*/
+
+  swtcBtn.addEventListener('click', function () {
+    switchPlayer()
+    computer = false
+    switchPlayers = true
+    win.style.opacity = '0'
+    gameBoard.style.opacity = '1'
+    displayPlayer.style.opacity = '1'
+    gameState = new Array(9).fill('')
+    space.forEach((spaces) => {
+      if (spaces.classList.value.includes('full')) {
+        spaces.classList.remove('full')
+        spaces.classList.remove('x')
+        spaces.classList.remove('o')
+        const audio = new Audio('528862__eponn__beep-4.wav')
+        audio.play()
+        audio.volume = 0.2
       }
     })
     logic()
@@ -162,6 +250,14 @@ const checkWin = () => {
       gameWin = true
       console.log(gameActive)
       currentPlayer = `${playerO}`
+      if (xScore >= 1) {
+        win.style.opacity = '1'
+        gameBoard.style.opacity = '0'
+        win.innerText = displayPlayer.innerText
+        displayPlayer.style.opacity = '0'
+        const audio = new Audio('521639__fupicat__winbrass.wav')
+        audio.play()
+      }
     }
 
     if (isMatch(oMove, winningCombos[i])) {
@@ -172,6 +268,14 @@ const checkWin = () => {
       gameWin = true
       gameActive = false
       currentPlayer = `${playerX}`
+      if (xScore || oScore || tieScore >= 1) {
+        win.style.opacity = '1'
+        gameBoard.style.opacity = '0'
+        win.innerText = displayPlayer.innerText
+        displayPlayer.style.opacity = '0'
+        const audio = new Audio('521639__fupicat__winbrass.wav')
+        audio.play()
+      }
     }
   }
   if (
@@ -184,6 +288,12 @@ const checkWin = () => {
     displayPlayer.innerText = `Tie Game!`
     gameActive = false
     gameWin = false
+    if (tieScore >= 1) {
+      win.style.opacity = '1'
+      gameBoard.style.opacity = '0'
+      win.innerText = displayPlayer.innerText
+      displayPlayer.style.opacity = '0'
+    }
   }
 
   if (gameActive) {

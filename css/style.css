@@ -1,8 +1,12 @@
-@media screen and (max-width: 401px) {
-  .body {
+@media screen and (max-width: 640px) {
+  body {
     width: 400px;
+    text-shadow: 2px 2px 4px #000000;
+    letter-spacing: 5em;
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
   display: grid;
@@ -23,6 +27,105 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
+  color: #ffffff;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 70px;
+  margin: 10px auto 10px auto;
+}
+
+.p {
+  font-family: 'Odibee Sans', cursive;
+}
+
+.author {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #ffffff;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 20px;
+  margin: 10px auto 10px auto;
+}
+
+.aiBtn {
+  opacity: 0.3;
+}
+
+.btn,
+.aiBtn,
+.swtcBtn,
+.whole {
+  display: inline-block;
+  position: relative;
+  background: rgb(0, 0, 94);
+  margin: 0 0.3em 0.3em 0;
+  padding: 0;
+  border-radius: 10px;
+  outline-offset: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: all 0.2s;
+  border: none;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.displayWinner {
+  color: white;
+}
+
+.layer,
+.whole {
+  display: inline-block;
+  position: relative;
+  padding: 8px 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(2, 2, 193);
+  transform: translateY(-10px);
+}
+
+.top,
+.whole {
+  background-color: mediumseagreen;
+  border-radius: 10%;
+}
+
+.layer1 {
+  position: absolute;
+  background: #8f8f8f;
+  border-radius: 10px;
+  transform: translateY(-3px);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.btn:active .layer,
+.swtcBtn:active .layer {
+  transform: translateY(-5px);
+  font-size: 1em;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.btn1:hover {
+  box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.btn3:hover {
+  box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
 }
 
 .score {
@@ -48,7 +151,15 @@ body {
   align-content: center;
 }
 .win {
-  margin-bottom: -50;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 200px;
+  pointer-events: none;
+  transition: all 700ms ease;
 }
 
 .game-board {
@@ -66,8 +177,9 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  font-size: 25px;
+  font-size: 35px;
   color: white;
+  font-family: 'Odibee Sans', cursive;
 }
 
 .score {
@@ -82,10 +194,12 @@ body {
   justify-content: center;
   align-content: center;
   content: 'x';
-  color: black;
+  color: white;
   font-size: 200px;
   animation: click 0.4s ease-in-out 0s none;
   text-align: center;
+  font-family: 'Odibee Sans', cursive;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .o::before {
@@ -95,10 +209,12 @@ body {
   justify-content: center;
   align-content: center;
   content: 'o';
-  color: black;
+  color: white;
   font-size: 200px;
   animation: click 0.4s ease-in-out 0s none;
   text-align: center;
+  font-family: 'Odibee Sans', cursive;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .space {
