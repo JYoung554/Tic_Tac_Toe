@@ -1,0 +1,169 @@
+@media screen and (max-width: 401px) {
+  .body {
+    width: 400px;
+  }
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: repeating-linear-gradient(#ff8a00, #e52e71);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  background-size: cover;
+  font-family: 'Caveat Brush', cursive;
+  min-width: 640px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  transition: all 0.2s;
+  color: black;
+}
+
+.score {
+  text-align: center;
+}
+
+.p {
+  padding: 20px;
+}
+
+.whole {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 30px;
+}
+
+.js-score {
+  display: flex;
+  color: white;
+  margin: 20px 150px 20px 150px;
+  justify-content: center;
+  align-content: center;
+}
+.win {
+  margin-bottom: -50;
+}
+
+.game-board {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 10px auto;
+  height: 600px;
+  width: 600px;
+}
+
+.displayPlayer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 25px;
+  color: white;
+}
+
+.score {
+  display: block;
+  margin: 0 auto;
+}
+
+.x::before {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  content: 'x';
+  color: black;
+  font-size: 200px;
+  animation: click 0.4s ease-in-out 0s none;
+  text-align: center;
+}
+
+.o::before {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  content: 'o';
+  color: black;
+  font-size: 200px;
+  animation: click 0.4s ease-in-out 0s none;
+  text-align: center;
+}
+
+.space {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  padding: 25px;
+  border: 2px solid white;
+}
+
+@keyframes click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mid {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.remove-l {
+  border-left: 2px solid transparent;
+}
+
+.remove-r {
+  border-right: 2px solid transparent;
+}
+
+.remove-t {
+  border-top: 2px solid transparent;
+}
+
+.remove-b {
+  border-bottom: 2px solid transparent;
+}
+
+h1 {
+  color: purple;
+}
