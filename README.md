@@ -7,7 +7,7 @@
 ### By: Jonte' Fears
 [LinkedIn](https://www.linkedin.com/in/jonte-fears-a70070156/) | [GitHub](https://github.com/JYoung554)
 
-[Live Site](https://enchanting-force.surge.sh/)
+[Live Site](http://tic-tac-toe-by-jonte-fears.surge.sh)
 
 
 ***
