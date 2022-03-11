@@ -1,7 +1,7 @@
 # Tic_Tac_Toe
 
 
-![Tic Tac Toe](https://github.com/JYoung554/Tic_Tac_Toe/blob/main/Screen%20Shot%202021-10-25%20at%208.39.08%20AM.png)
+![Tic Tac Toe](https://github.com/JYoung554/Tic_Tac_Toe/blob/main/Screen%20Shot%202022-03-11%20at%204.34.19%20AM.png)
 
 
 ### By: Jonte' Fears
