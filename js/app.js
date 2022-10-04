@@ -50,6 +50,18 @@ let gameActive = false
 
 let gameState = ['', '', '', '', '', '', '', '', '']
 
+window.onresize = function () {
+  let box = document.getElementById('size')
+  const minSize = 0.5
+  const maxSize = 1
+  let scale = Math.min(
+    window.innerWidth / (box.offsetWidth + 8),
+    window.innerHeight / (box.offsetHeight + 8)
+  )
+  scale = Math.min(maxSize, Math.max(minSize, scale))
+  document.documentElement.style.setProperty('--pageScale', scale)
+}
+
 const winningCombos = [
   [0, 1, 2],
   [3, 4, 5],

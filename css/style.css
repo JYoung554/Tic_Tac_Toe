@@ -1,10 +1,28 @@
-@media screen and (max-width: 640px) {
+:root{
+  --pageScale: 1;
+}
+#size{
+  transform: scale(var(--pageScale))
+}
+
+
+
+@media screen and (max-width: 1080px) {
   body {
-    width: 400px;
-    text-shadow: 2px 2px 4px #000000;
-    letter-spacing: 5em;
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    text-shadow: 2px 2px 2px #2b2b2b;
+    max-width:1080px;
+  };
+  .win{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin:auto;
   }
 }
+
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -152,7 +170,7 @@ body {
 }
 .win {
   position: absolute;
-  top: 80%;
+  top: 50%;
   left: 50%;
   color: white;
   transform: translate(-50%, -50%);
